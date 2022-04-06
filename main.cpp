@@ -17,7 +17,6 @@ int main(){
         std::cerr << "Can not open the file!" << std::endl; 
     }
 
-
     Hex hex;
 
     hex.fileProcess(filename);

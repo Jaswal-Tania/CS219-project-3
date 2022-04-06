@@ -1,6 +1,7 @@
 
 #include"hexRead.h"
 
+
 void Hex::fileProcess(string filename){
 
     std::ifstream file(filename);
@@ -90,6 +91,11 @@ uint32_t* Hex::RegPtr(string reg){
     }
 }
 
+uint32_t Hex::immediateInt(string Immediate){
+    std::string remove = Immediate.substr(1, std::string::npos);
+
+    return std::stoul(remove, nullptr, 16);
+}
 
 
 void Hex::add(string Rd, string Rn, string Rm){
@@ -196,11 +202,6 @@ void Hex::xorR(string Rd, string Rn, string Rm){
 }
 
 
-uint32_t Hex::immediateInt(string Immediate){
-    std::string remove = Immediate.substr(1, std::string::npos);
-
-    return std::stoul(remove, nullptr, 16);
-}
 
 void Hex::mov(string Rd, string Immediate){
 
