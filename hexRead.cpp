@@ -12,6 +12,7 @@ void Hex::fileProcess(string filename){
     interpret(line);
     }
 }
+
 void Hex::interpret(string line){
 
     std::stringstream ss;
@@ -117,21 +118,6 @@ void Hex::add(string Rd, string Rn, string Rm){
 
 
 
-void Hex::Aand(string Rd, string Rn, string Rm){
-
-    uint32_t operand1 = *RegPtr(Rn);
-
-    uint32_t operand2 = *RegPtr(Rm);
-
-    uint32_t* result = RegPtr(Rd);
-
-    *result = operand1 & operand2; // And operation
-
-    cout << "AND " << Rd << ", " << Rn << ", " << Rm << "\n" << 
-    hex << "The AND of Ox" << operand1 << " and Ox" << operand2 << " is Ox" << *result << endl;
-}
-
-
 void Hex::asr(string Rd, string Rn){
 
      uint32_t tempOperand = *RegPtr(Rn);
@@ -151,6 +137,34 @@ void Hex::asr(string Rd, string Rn){
 
     cout << "ASR " << Rd << ", " << Rn << "\n" << 
     hex << "The ASR of Ox" << operand1 << " is Ox" << *result << endl;
+}
+
+void Hex::sub(string Rd, string Rn, string Rm){
+
+    uint32_t operand1 = *RegPtr(Rn);
+
+    uint32_t operand2 = *RegPtr(Rm);
+
+    uint32_t* result = RegPtr(Rd);
+
+    *result = operand1 - operand2; // subtract
+
+    cout << "SUB " << Rd << ", " << Rn << ", " << Rm << "\n" << 
+    hex << "The SUB of Ox" << operand1 << " and Ox" << operand2 << " is Ox" << *result << endl;
+}
+
+void Hex::Aand(string Rd, string Rn, string Rm){
+
+    uint32_t operand1 = *RegPtr(Rn);
+
+    uint32_t operand2 = *RegPtr(Rm);
+
+    uint32_t* result = RegPtr(Rd);
+
+    *result = operand1 & operand2; // And operation
+
+    cout << "AND " << Rd << ", " << Rn << ", " << Rm << "\n" << 
+    hex << "The AND of Ox" << operand1 << " and Ox" << operand2 << " is Ox" << *result << endl;
 }
 
 void Hex::lsr(string Rd, string Rn){
@@ -178,6 +192,7 @@ void Hex::lsl(string Rd, string Rn){
     hex << "The LSL of Ox" << operand1 << " is Ox" << *result << endl;
 
 }
+
 void Hex::orr(string Rd, string Rn, string Rm){
 
     uint32_t operand1 = *RegPtr(Rn);
@@ -192,19 +207,7 @@ void Hex::orr(string Rd, string Rn, string Rm){
     hex << "The OR of Ox" << operand1 << " and Ox" << operand2 << " is Ox" << *result << endl;
 }
     
-void Hex::sub(string Rd, string Rn, string Rm){
 
-    uint32_t operand1 = *RegPtr(Rn);
-
-    uint32_t operand2 = *RegPtr(Rm);
-
-    uint32_t* result = RegPtr(Rd);
-
-    *result = operand1 - operand2; // subtract
-
-    cout << "SUB " << Rd << ", " << Rn << ", " << Rm << "\n" << 
-    hex << "The SUB of Ox" << operand1 << " and Ox" << operand2 << " is Ox" << *result << endl;
-}
 
 
 void Hex::xorR(string Rd, string Rn, string Rm){

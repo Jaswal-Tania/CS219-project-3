@@ -11,7 +11,7 @@ int main(){
 
     std::string filename;
 
-    std::ifstream inFile("hex.txt"); //open teh txt file
+    std::ifstream inFile("hex.txt"); //open the txt file
 
     if(!inFile){
         std::cerr << "Can not open the file!" << std::endl; // send an error message
