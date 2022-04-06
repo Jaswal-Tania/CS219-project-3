@@ -11,13 +11,13 @@ int main(){
 
     std::string filename;
 
-    std::ifstream inFile("hex.txt"); 
+    std::ifstream inFile("hex.txt"); //open teh txt file
 
     if(!inFile){
-        std::cerr << "Can not open the file!" << std::endl; 
+        std::cerr << "Can not open the file!" << std::endl; // send an error message
     }
 
-    Hex hex;
+    Hex hex; //Instantiate the class
 
     hex.fileProcess(filename);
 
